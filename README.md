@@ -15,7 +15,6 @@ Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguien
 
 🔁 Al finalizar, sube los cambios a tu repositorio remoto:
 
-<<<<<<< HEAD
 # 🧩 Proyecto Final – Taller de Desarrollo de un Mini Compilador
 
 **Materia:** Compiladores  
