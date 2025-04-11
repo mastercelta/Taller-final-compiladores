@@ -19,7 +19,6 @@ Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguien
 
 **Materia:** Compiladores  
 **Nivel:** Ingeniería de Sistemas
-=======
 
 # 🧩 Proyecto Final – Taller de Desarrollo de un Mini Compilador
 
