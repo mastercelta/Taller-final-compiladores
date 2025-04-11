@@ -1,0 +1,12 @@
+{
+  "name": "proyecto-final",
+  "version": "1.0.0",
+  "description": "**Materia:** Compiladores  \r **Nivel:** Ingeniería de Sistemas  \r **Duración estimada:** 2-3 semanas  \r **Total de grupos:** 7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,17 +1,39 @@
+# 🚀 Instrucciones Iniciales del Proyecto
+
+Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguientes pasos:
+
+1.**Realiza un fork** de este repositorio en tu cuenta personal o de tu grupo en GitHub. 2. **Clona** el repositorio en tu equipo local con el siguiente comando:
+
+# Desarrolla tu proyecto en la estructura de carpetas proporcionada. Asegúrate de:
+
+1.Realizar commits frecuentes con mensajes claros.
+
+2.Mantener un historial limpio y ordenado de cambios.
+
+3.Documentar adecuadamente tu código y tu enfoque.
+
+🔁 Al finalizar, sube los cambios a tu repositorio remoto:
+
+git add .
+git commit -m "Entrega final del proyecto del Grupo 1"
+git push origin grupo1
+
 # 🧩 Proyecto Final – Taller de Desarrollo de un Mini Compilador
+
 **Materia:** Compiladores  
 **Nivel:** Ingeniería de Sistemas  
 **Duración estimada:** 2-3 semanas  
-**Total de grupos:** 7  
+**Total de grupos:** 7
 
 ---
 
 ## 🎯 Objetivo del Proyecto
 
-El objetivo de este proyecto es que cada grupo desarrolle un **mini compilador** funcional que implemente las **tres fases de análisis de compilación**:  
-- Análisis léxico  
-- Análisis sintáctico  
-- Análisis semántico  
+El objetivo de este proyecto es que cada grupo desarrolle un **mini compilador** funcional que implemente las **tres fases de análisis de compilación**:
+
+- Análisis léxico
+- Análisis sintáctico
+- Análisis semántico
 
 A pesar de que todos los grupos deben construir un compilador básico funcional, cada grupo se enfocará en **profundizar y presentar una fase o componente técnico diferente**, permitiendo así una evaluación variada y especializada por grupo.
 
@@ -38,15 +60,15 @@ Todos los grupos deben cumplir con los siguientes requisitos:
 
 ## 🔀 Variaciones y Enfoques Técnicos por Grupo
 
-| Grupo | Enfoque técnico | Detalle |
-|-------|-----------------|---------|
-| **1** | Análisis Léxico Avanzado | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos. |
-| **2** | Análisis Sintáctico | Aplicación de gramáticas libres de contexto, derivaciones, y construcción de árboles sintácticos. |
-| **3** | Análisis Semántico | Revisión de tipos, declaración de variables, verificación de errores semánticos. |
-| **4** | Tabla de Símbolos | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito. |
-| **5** | Código Intermedio | Generación de cuádruplas u otras formas intermedias desde el árbol sintáctico. |
-| **6** | Visualización del Árbol Sintáctico | Visualización gráfica mediante librerías (Graphviz, Mermaid, vis.js). |
-| **7** | Optimización y Código Destino | Aplicación de técnicas básicas de optimización y generación de código destino simulado. |
+| Grupo | Enfoque técnico                    | Detalle                                                                                           |
+| ----- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **1** | Análisis Léxico Avanzado           | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos.       |
+| **2** | Análisis Sintáctico                | Aplicación de gramáticas libres de contexto, derivaciones, y construcción de árboles sintácticos. |
+| **3** | Análisis Semántico                 | Revisión de tipos, declaración de variables, verificación de errores semánticos.                  |
+| **4** | Tabla de Símbolos                  | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito.                |
+| **5** | Código Intermedio                  | Generación de cuádruplas u otras formas intermedias desde el árbol sintáctico.                    |
+| **6** | Visualización del Árbol Sintáctico | Visualización gráfica mediante librerías (Graphviz, Mermaid, vis.js).                             |
+| **7** | Optimización y Código Destino      | Aplicación de técnicas básicas de optimización y generación de código destino simulado.           |
 
 ---
 
@@ -67,13 +89,13 @@ Cada grupo debe subir a su repositorio:
 
 ## 📝 Criterios de Evaluación
 
-| Criterio | Ponderación |
-|---------|-------------|
-| ✔️ Cumplimiento de requisitos básicos (léxico, sintáctico, semántico) | 30% |
-| 🔍 Profundidad y calidad del enfoque técnico asignado | 30% |
-| 💻 Organización y calidad del código fuente | 10% |
-| 📝 Claridad de la documentación técnica | 10% |
-| 🎙️ Defensa oral (dominio, claridad, argumentación) | 20% |
+| Criterio                                                              | Ponderación |
+| --------------------------------------------------------------------- | ----------- |
+| ✔️ Cumplimiento de requisitos básicos (léxico, sintáctico, semántico) | 30%         |
+| 🔍 Profundidad y calidad del enfoque técnico asignado                 | 30%         |
+| 💻 Organización y calidad del código fuente                           | 10%         |
+| 📝 Claridad de la documentación técnica                               | 10%         |
+| 🎙️ Defensa oral (dominio, claridad, argumentación)                    | 20%         |
 
 ---
 
