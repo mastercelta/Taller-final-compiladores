@@ -73,7 +73,7 @@ Todos los grupos deben cumplir con los siguientes requisitos:
 | **4** | Tabla de Símbolos | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito. |
 | **5** | Código Intermedio | Generación de cuádruplas u otras formas intermedias desde el árbol sintáctico. |
 | **6** | Visualización del Árbol Sintáctico | Visualización gráfica mediante librerías (Graphviz, Mermaid, vis.js). |
-| **7** | Optimización y Código Destino | Aplicación de técnicas básicas de optimización y generación de código destino simulado. |
+| **7** | Optimización y Código Destino | Aplicación de técnicas básicas de optimización y generación de código destino simulado. | 
 
 ---
 
