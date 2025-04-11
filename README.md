@@ -14,16 +14,10 @@ Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguien
 
 🔁 Al finalizar, sube los cambios a tu repositorio remoto:
 
-git add .
-git commit -m "Entrega final del proyecto del Grupo 1"
-git push origin grupo1
-
 # 🧩 Proyecto Final – Taller de Desarrollo de un Mini Compilador
 
 **Materia:** Compiladores  
-**Nivel:** Ingeniería de Sistemas  
-**Duración estimada:** 2-3 semanas  
-**Total de grupos:** 7
+**Nivel:** Ingeniería de Sistemas
 
 ---
 
@@ -60,15 +54,18 @@ Todos los grupos deben cumplir con los siguientes requisitos:
 
 ## 🔀 Variaciones y Enfoques Técnicos por Grupo
 
-| Grupo | Enfoque técnico                    | Detalle                                                                                           |
-| ----- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **1** | Análisis Léxico Avanzado           | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos.       |
-| **2** | Análisis Sintáctico                | Aplicación de gramáticas libres de contexto, derivaciones, y construcción de árboles sintácticos. |
-| **3** | Análisis Semántico                 | Revisión de tipos, declaración de variables, verificación de errores semánticos.                  |
-| **4** | Tabla de Símbolos                  | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito.                |
-| **5** | Código Intermedio                  | Generación de cuádruplas u otras formas intermedias desde el árbol sintáctico.                    |
-| **6** | Visualización del Árbol Sintáctico | Visualización gráfica mediante librerías (Graphviz, Mermaid, vis.js).                             |
-| **7** | Optimización y Código Destino      | Aplicación de técnicas básicas de optimización y generación de código destino simulado.           |
+| Grupo | Enfoque técnico | Detalle |
+| ----- | --------------- | ------- |
+
+| **1**(-Maria Alejandra Reina
+-Jessica Tascon
+-Sebastian Ramirez Parra) | Análisis Léxico Avanzado | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos. |
+| **2** | Análisis Sintáctico | Aplicación de gramáticas libres de contexto, derivaciones, y construcción de árboles sintácticos. |
+| **3** | Análisis Semántico | Revisión de tipos, declaración de variables, verificación de errores semánticos. |
+| **4** | Tabla de Símbolos | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito. |
+| **5** | Código Intermedio | Generación de cuádruplas u otras formas intermedias desde el árbol sintáctico. |
+| **6** | Visualización del Árbol Sintáctico | Visualización gráfica mediante librerías (Graphviz, Mermaid, vis.js). |
+| **7** | Optimización y Código Destino | Aplicación de técnicas básicas de optimización y generación de código destino simulado. |
 
 ---
 
@@ -82,21 +79,9 @@ Cada grupo debe subir a su repositorio:
    - Enfoque técnico del grupo.
    - Diagrama de flujo o arquitectura del compilador.
    - Ejemplos de entrada/salida.
-3. 📊 **Visualización de tabla de símbolos o árbol sintáctico** (si aplica).
-4. 🧾 **Archivo de código intermedio o destino** (si aplica).
+3. 📊 **Visualización de tabla de símbolos o árbol sintáctico** .
+4. 🧾 **Archivo de código intermedio o destino** .
 
 ---
 
 ## 📝 Criterios de Evaluación
-
-| Criterio                                                              | Ponderación |
-| --------------------------------------------------------------------- | ----------- |
-| ✔️ Cumplimiento de requisitos básicos (léxico, sintáctico, semántico) | 30%         |
-| 🔍 Profundidad y calidad del enfoque técnico asignado                 | 30%         |
-| 💻 Organización y calidad del código fuente                           | 10%         |
-| 📝 Claridad de la documentación técnica                               | 10%         |
-| 🎙️ Defensa oral (dominio, claridad, argumentación)                    | 20%         |
-
----
-
-> 💡 **Consejo:** Aprovechen su experiencia previa en generación de tokens, árboles sintácticos y tablas de símbolos para integrar mejor sus componentes en este proyecto final.
