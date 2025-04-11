@@ -1,66 +1,33 @@
-# 🚀 Instrucciones Iniciales del Proyecto
+# 🛠️ Proyecto Final – Compiladores
 
-Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguientes pasos:
+## 📌 Introducción
 
-1.**Realiza un fork** de este repositorio en tu cuenta personal o de tu grupo en GitHub. 
+Este repositorio contiene la **estructura base** que debes utilizar para el desarrollo del **proyecto final** de la asignatura *Compiladores*. Todos los estudiantes deben trabajar sobre esta estructura y respetar la organización de carpetas y archivos propuesta.
 
-2.**Clona** el repositorio en tu equipo local con el siguiente comando:
-
-# Desarrolla tu proyecto en la estructura de carpetas proporcionada. Asegúrate de:
-
-1.Realizar commits frecuentes con mensajes claros.
-
-2.Mantener un historial limpio y ordenado de cambios.
-
-3.Documentar adecuadamente tu código y tu enfoque.
-
-🔁 Al finalizar, sube los cambios a tu repositorio remoto:
-
-# 🧩 Proyecto Final – Taller de Desarrollo de un Mini Compilador
-
-**Materia:** Compiladores  
-**Nivel:** Ingeniería de Sistemas  
-
----
-## 🎯 Objetivo del Proyecto
-
-El objetivo de este proyecto es que cada grupo desarrolle un **mini compilador** funcional que implemente las **tres fases de análisis de compilación**:
-
-- Análisis léxico
-- Análisis sintáctico
-- Análisis semántico
+El objetivo del proyecto es implementar un **mini compilador** que contemple las fases de análisis léxico, sintáctico y semántico. Cada grupo tendrá un enfoque técnico específico que deberá profundizar según las instrucciones del docente.
 
 ---
 
-## 🧾 Requerimientos Generales del Proyecto
+## 🚀 Instrucciones para usar este repositorio
 
-Todos los grupos deben cumplir con los siguientes requisitos:
+Sigue los pasos a continuación para comenzar correctamente tu proyecto:
 
-- ✅ Crear un compilador que lea una expresión o conjunto de instrucciones de entrada.
-- ✅ Implementar:
-  - Análisis léxico (generar y mostrar los tokens).
-  - Análisis sintáctico (validar sintaxis mediante una gramática libre de contexto).
-  - Análisis semántico (verificar tipos, uso correcto de variables, etc.).
-- ✅ Usar alguna herramienta de parsing (ANTLR, Flex/Bison, PLY, PEG.js, etc.).
-- ✅ Crear una interfaz simple de ejecución (CLI, web o visual).
-- ✅ Entregar:
-  - Código fuente comentado.
-  - Documentación clara del diseño del compilador.
-  - Informe técnico del enfoque asignado.
-  - Defensa oral del proyecto.
+### 1. Realiza un Fork del repositorio
 
----
+Haz clic en el botón **"Fork"** en la parte superior derecha de este repositorio. Esto creará una copia en tu cuenta de GitHub.
 
-## 📦 Entregables por Grupo
+### 2. Clona tu Fork a tu máquina local
+Asegúrate de realizar commits de manera frecuente para registrar tu progreso.
 
-Cada grupo debe subir a su repositorio:
+Sube tus cambios a GitHub
 
-1. 📁 **Código fuente completo y comentado.**
-2. 📄 **Informe en PDF** con:
-   - Descripción del compilador.
-   - Enfoque técnico del grupo.
-   - Diagrama de flujo o arquitectura del compilador.
-   - Ejemplos de entrada/salida.
-3. 📊 **Visualización de tabla de símbolos o árbol sintáctico** .
-4. 🧾 **Archivo de código intermedio o destino** .
+### 3. Comparte tu repositorio con el docente
+Antes de la fecha de entrega, asegúrate de compartir el enlace de tu repositorio (fork) con el docente a través del medio indicado 
+
+
+
+
+
+
+
 
