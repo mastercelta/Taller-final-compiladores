@@ -2,7 +2,8 @@
 
 Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguientes pasos:
 
-1.**Realiza un fork** de este repositorio en tu cuenta personal o de tu grupo en GitHub. 2. **Clona** el repositorio en tu equipo local con el siguiente comando:
+1.**Realiza un fork** de este repositorio en tu cuenta personal o de tu grupo en GitHub. 
+2. **Clona** el repositorio en tu equipo local con el siguiente comando:
 
 # Desarrolla tu proyecto en la estructura de carpetas proporcionada. Asegúrate de:
 
