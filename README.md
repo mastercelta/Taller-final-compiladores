@@ -67,9 +67,7 @@ Todos los grupos deben cumplir con los siguientes requisitos:
 | Grupo | Enfoque técnico | Detalle |
 | ----- | --------------- | ------- |
 
-| **1**(-Maria Alejandra Reina
--Jessica Tascon
--Sebastian Ramirez Parra) | Análisis Léxico Avanzado | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos. |
+| **1** | Análisis Léxico Avanzado | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos. |
 | **2** | Análisis Sintáctico | Aplicación de gramáticas libres de contexto, derivaciones, y construcción de árboles sintácticos. |
 | **3** | Análisis Semántico | Revisión de tipos, declaración de variables, verificación de errores semánticos. |
 | **4** | Tabla de Símbolos | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito. |
