@@ -15,9 +15,6 @@ Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguien
 
 🔁 Al finalizar, sube los cambios a tu repositorio remoto:
 
-git add .
-git commit -m "Entrega final del proyecto del Grupo 1"
-git push origin grupo1
 
 # 🧩 Proyecto Final – Taller de Desarrollo de un Mini Compilador
 
