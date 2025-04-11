@@ -24,11 +24,8 @@ Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguien
 
 **Materia:** Compiladores  
 **Nivel:** Ingeniería de Sistemas  
-**Total de grupos:** 7
->>>>>>> 0ea9f40d38d0b6ae0f01a8702b073cffd55fc212
 
 ---
-
 ## 🎯 Objetivo del Proyecto
 
 El objetivo de este proyecto es que cada grupo desarrolle un **mini compilador** funcional que implemente las **tres fases de análisis de compilación**:
@@ -36,8 +33,6 @@ El objetivo de este proyecto es que cada grupo desarrolle un **mini compilador**
 - Análisis léxico
 - Análisis sintáctico
 - Análisis semántico
-
-A pesar de que todos los grupos deben construir un compilador básico funcional, cada grupo se enfocará en **profundizar y presentar una fase o componente técnico diferente**, permitiendo así una evaluación variada y especializada por grupo.
 
 ---
 
@@ -60,21 +55,6 @@ Todos los grupos deben cumplir con los siguientes requisitos:
 
 ---
 
-## 🔀 Variaciones y Enfoques Técnicos por Grupo
-
-| Grupo | Enfoque técnico | Detalle |
-| ----- | --------------- | ------- |
-
-| **1** | Análisis Léxico Avanzado | Reglas léxicas detalladas, generación y visualización de tokens, manejo de errores léxicos. |
-| **2** | Análisis Sintáctico | Aplicación de gramáticas libres de contexto, derivaciones, y construcción de árboles sintácticos. |
-| **3** | Análisis Semántico | Revisión de tipos, declaración de variables, verificación de errores semánticos. |
-| **4** | Tabla de Símbolos | Diseño e implementación de estructura para almacenar nombre, tipo, valor y ámbito. |
-| **5** | Código Intermedio | Generación de cuádruplas u otras formas intermedias desde el árbol sintáctico. |
-| **6** | Visualización del Árbol Sintáctico | Visualización gráfica mediante librerías (Graphviz, Mermaid, vis.js). |
-| **7** | Optimización y Código Destino | Aplicación de técnicas básicas de optimización y generación de código destino simulado. | 
-
----
-
 ## 📦 Entregables por Grupo
 
 Cada grupo debe subir a su repositorio:
@@ -88,4 +68,3 @@ Cada grupo debe subir a su repositorio:
 3. 📊 **Visualización de tabla de símbolos o árbol sintáctico** .
 4. 🧾 **Archivo de código intermedio o destino** .
 
----
