@@ -20,7 +20,6 @@ Antes de comenzar el desarrollo del proyecto, cada grupo debe seguir los siguien
 
 **Materia:** Compiladores  
 **Nivel:** Ingeniería de Sistemas  
-**Duración estimada:** 2-3 semanas  
 **Total de grupos:** 7
 
 ---
