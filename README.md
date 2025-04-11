@@ -83,5 +83,3 @@ Cada grupo debe subir a su repositorio:
 4. 🧾 **Archivo de código intermedio o destino** .
 
 ---
-
-## 📝 Criterios de Evaluación
