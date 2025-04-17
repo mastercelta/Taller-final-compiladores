@@ -1,11 +1,11 @@
 # 🛠️ Proyecto Final – Compiladores
 
-# ![commits](https://badgen.net/github/commits/mastercelta/lexico-compiladores?icon=github)
-# ![last_commit](https://img.shields.io/github/last-commit/mastercelta/lexico-compiladores)
+![commits](https://badgen.net/github/commits/mastercelta/lexico-compiladores?icon=github)
+![last_commit](https://img.shields.io/github/last-commit/mastercelta/lexico-compiladores)
 
-# ![language](https://img.shields.io/badge/language-JavaScript-yellow.svg)
-# ![Node.js](https://img.shields.io/badge/runtime-Node.js-green.svg)
-# ![npm](https://img.shields.io/badge/npm-v8.19.2-blue.svg)
+![language](https://img.shields.io/badge/language-JavaScript-yellow.svg)
+![Node.js](https://img.shields.io/badge/runtime-Node.js-green.svg)
+![npm](https://img.shields.io/badge/npm-v8.19.2-blue.svg)
 
 ## 📌 Introducción
 
