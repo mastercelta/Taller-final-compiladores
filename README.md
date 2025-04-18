@@ -23,7 +23,29 @@ El objetivo del proyecto es implementar un **mini compilador** que contemple las
 
 
 ## Descripción del Proyecto
-Mini Compilador que permite analizar un código fuente escrito en un lenguaje similar a JavaScript. El programa debe analizar el código fuente y revisar la sintaxis y semántica del mismo. El compilador debe generar un archivo de salida que contenga el código fuente analizado y los errores encontrados durante el análisis.
+Mini Compilador que permite analizar un código fuente escrito en un lenguaje similar a JavaScript. El programa debe analizar el código fuente y revisar la sintaxis y semántica del mismo. El compilador debe generar un archivo de salida que contenga el código fuente analizado y los errores encontrados durante el análisis. Ademas va crear una imagen del arbol sintáctico y una tabla de simbolos. como tambien un archivo pdf con el informe tecnico del compilador. 
+
+El proyecto interpreta un lenguaje para realizar operaciones matematicas, asi como poder definir variables, realizar calculos y mostrar resultados, todo con una sintaxis facil.
+
+## ✅ Palabras clave del lenguaje:
+def: se usa para declarar y asignar valores a variables.
+
+mostrar: se usa para imprimir resultados de operaciones o variables.
+
+//: se usa para escribir comentarios que el compilador ignora.
+
+## Ejemplo de uso:
+```plaintext
+    // Definimos variables
+    def a como 5;
+    def b como 3;
+
+    // Operación
+    def resultado como a + b * 2;
+
+    // Mostramos resultado
+    mostrar resultado;
+```
 
 ## 🚀 Instrucciones para usar este repositorio
 
