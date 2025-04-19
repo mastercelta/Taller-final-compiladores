@@ -4,9 +4,13 @@
   "description": "**Materia:** Compiladores  \r **Nivel:** Ingeniería de Sistemas  \r **Duración estimada:** 2-3 semanas  \r **Total de grupos:** 7",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
