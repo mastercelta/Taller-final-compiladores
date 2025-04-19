@@ -3,6 +3,7 @@
 const lexer = require('./lexer');
 const parser = require('./parser');
 const analyze = require('./semantic');
+const generate = require('./intermediate');
 
 function execute(ast, symbolTable = {}) {
     for (const node of ast) {
@@ -49,8 +50,10 @@ function compile(input) {
         const tokens = lexer(input);
         const ast = parser(tokens);
         analyze(ast);
+        const intermediate = generate(ast);
         execute(ast);
-        return { success: true, ast, tokens };
+
+        return { success: true, tokens, ast, intermediate };
     } catch (error) {
         return { success: false, error: error.message };
     }
