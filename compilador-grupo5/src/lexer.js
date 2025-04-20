@@ -7,11 +7,11 @@ function lexer(input) {
     const tokenSpecs = [
         [/^\s+/, null],    // Espacios
         [/^\/\/.*$/, null], // Comentarios
-        [/^def\b/, 'DEF'], //Definicion de variables
-        [/^igual\b/, 'IGUAL'],
-        [/^mostrar\b/, 'MOSTRAR'],
-        [/^[a-zA-Z_][a-zA-Z0-9_]*/, 'IDENTIFIER'],
-        [/^[0-9]+(?:\.[0-9]+)?/, 'NUMBER'],
+        [/^def\b/, 'DEF'], 
+        [/^igual\b/, 'IGUAL'], 
+        [/^mostrar\b/, 'MOSTRAR'], 
+        [/^[a-zA-Z_][a-zA-Z0-9_]*/, 'IDENTIFIER'], 
+        [/^[0-9]+(?:\.[0-9]+)?/, 'NUMBER'], 
         [/^[+\-*/]/, 'OPERATOR'],
         [/^;/, 'SEMICOLON'],
         [/^\(/, 'LPAREN'],

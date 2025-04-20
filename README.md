@@ -37,11 +37,11 @@ mostrar: se usa para imprimir resultados de operaciones o variables.
 ## Ejemplo de uso:
 ```plaintext
     // Definimos variables
-    def a como 5;
-    def b como 3;
+    def a igual 5;
+    def b igual 3;
 
     // Operación
-    def resultado como a + b * 2;
+    def resultado igual a + b * 2;
 
     // Mostramos resultado
     mostrar resultado;
