@@ -1,1 +1,25 @@
 <!-- Página principal -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Compilador</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
+</head>
+<body>
+    <div class="toolbar">
+        <button onclick="ejecutarCodigo()"><i class="fas fa-play"></i> Ejecutar</button>
+        <button onclick="limpiarCodigo()"><i class="fas fa-trash"></i> Limpiar</button>
+    </div>
+
+    <div class="editor">
+    <textarea id="code" placeholder="// Escribe tu código aquí..."></textarea>
+    <div class="output" id="output">Consola de salida...</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
