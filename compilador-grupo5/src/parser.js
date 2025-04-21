@@ -11,7 +11,7 @@ function parser(tokens) {
         const token = tokens[current];
         if (!token || token.type !== expectedType) {
             throw new Error(
-                `Error sintáctico: se esperaba '${expectedType}' en línea ${token?.line}, columna ${token?.col}`
+                `Error sintáctico: se esperaba '${expectedType}' en línea ${token?.line+1}, columna ${token?.col+1}`
             );
         }
         current++;

@@ -1,25 +1,63 @@
 <!-- Página principal -->
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Compilador</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
     <div class="toolbar">
-        <button onclick="ejecutarCodigo()"><i class="fas fa-play"></i> Ejecutar</button>
-        <button onclick="limpiarCodigo()"><i class="fas fa-trash"></i> Limpiar</button>
+      <button onclick="ejecutarCodigo()"><i class="fas fa-play"></i> Ejecutar</button>
+      <button onclick="limpiarCodigo()"><i class="fas fa-trash"></i> Limpiar</button>
+      <button onclick="mostrarInstrucciones()"><i class="fas fa-info"></i> Instrucciones</button>
     </div>
 
     <div class="editor">
-    <textarea id="code" placeholder="// Escribe tu código aquí..."></textarea>
-    <div class="output" id="output">Consola de salida...</div>
+      <div class="editor-wrapper">
+        <div class="line-numbers" id="line-numbers"></div>
+        <textarea id="code" placeholder="// Escribe tu código aquí..."></textarea>
+      </div>
+      <div id="statusbar" class="statusbar">Esperando código...</div>
+      <div class="toolbar alignrigth">
+        <button onclick="limpiarCodigo()"><i class="fas fa-tree"></i> Mostrar Arbol</button>
+        <button onclick="descargarPDF()"><i class="fas fa-solid fa-file-pdf"></i> Descargar PDF</button>
+      </div>
+      <div class="output" id="output">Consola de salida...</div>
     </div>
+    <div id="modal-instrucciones" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarInstrucciones()">&times;</span>
+        <h2>📘 Instrucciones de Gramática</h2>
+        <pre>
+      - Declarar una variable:
+        def nombreVariable igual expresión;
+      
+      - Mostrar una variable o resultado:
+        mostrar expresión;
+      
+      - Operaciones soportadas:
+        +  suma
+        -  resta
+        *  multiplicación
+        /  división
+      
+      - Puedes usar variables, números y paréntesis:
+        def resultado igual (a + b) * 2;
+        mostrar resultado;
 
+        🧪 Ejemplo completo:
+
+        def a igual 5;
+        def b igual 3;
+        def resultado igual a + b * 2;
+        mostrar resultado;
+          </pre
+        >
+      </div>
+    </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
