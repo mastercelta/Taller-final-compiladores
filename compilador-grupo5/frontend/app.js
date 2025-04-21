@@ -41,11 +41,23 @@ function descargarPDF(tokens, ast, intermediate) {
 function ejecutarCodigo() {
     const code = document.getElementById('code').value;
 
-    if (code.trim() === '') {
-        document.getElementById('output').textContent = 'No hay código para ejecutar.';
-    } else {
-        document.getElementById('output').textContent = 'Ejecutando código...\n' + code;
-    }
+    fetch('http://localhost:3000/ejecutar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code })
+    })
+        .then(res => res.json())
+        .then(data => {
+            const output = document.getElementById('output');
+            if (data.success) {
+                output.innerHTML = data.output.replace(/\\n/g, '<br>');
+            } else {
+                output.textContent = '❌ ' + data.error;
+            }
+        })
+        .catch(err => {
+            console.error('Error al ejecutar código:', err);
+        });
 }
 
 function limpiarCodigo() {

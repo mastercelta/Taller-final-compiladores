@@ -9,17 +9,20 @@ function parser(tokens) {
 
     function consume(expectedType) {
         const token = tokens[current];
-        console.log(token);
-        console.log(current);
-        if (!token || token.type !== expectedType) {
+        if (!token || token/* The line `console.log(current);` in the `consume` function of the parser
+        is used to log the current index of the token being processed in the
+        `tokens` array. This can be helpful for debugging and understanding the
+        flow of the parser as it consumes tokens during the parsing process. It
+        allows you to see which token index is being processed at any given time. */
+        .type !== expectedType) {
             if (!token) {
                 const tokenLast = tokens[current - 1];
-                throw new Error(`Error sintáctico1: se esperaba '${expectedType}' en línea ${tokenLast.line}, columna ${tokenLast.col}`);
+                throw new Error(`Error sintáctico: se esperaba '${expectedType}' en línea ${tokenLast.line}, columna ${tokenLast.col}`);
             }
             //Revisar si es el ultimo token de la linea y el expectedType es diferente
             if (token.line !== tokens[current - 1].line && token.type !== expectedType) {
                 const tokenLast = tokens[current - 1];
-                throw new Error(`Error sintáctico2: se esperaba '${expectedType}' en línea ${tokenLast.line}, columna ${tokenLast.col}`);
+                throw new Error(`Error sintáctico: se esperaba '${expectedType}' en línea ${tokenLast.line}, columna ${tokenLast.col}`);
             }
             throw new Error(
                 `Error sintáctico: se esperaba '${expectedType}' en línea ${token.line}, columna ${token?.col}`
@@ -41,7 +44,7 @@ function parser(tokens) {
             consume('RPAREN');
             return expr;
         }
-        
+
         if (token.line !== tokens[current - 1].line) {
             const tokenLast = tokens[current - 1];
             throw new Error(`Expresión no válida en línea ${tokenLast.line}, columna ${tokenLast.col}`);
@@ -92,6 +95,14 @@ function parser(tokens) {
             const expr = parseExpression();
             consume('SEMICOLON');
             return { type: 'Print', expression: expr };
+        }
+
+        if (token.type === 'IDENTIFIER') {
+            const id = consume('IDENTIFIER');
+            consume('IGUAL');
+            const expr = parseExpression();
+            consume('SEMICOLON');
+            return { type: 'Assignment', identifier: id.value, expression: expr };
         }
 
         throw new Error(`Instrucción no válida en línea ${token.line}, columna ${token.col}`);
