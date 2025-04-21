@@ -38,28 +38,33 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
-  background: #fff;
+  height: 300px;
 }
 
 .line-numbers {
   padding: 8px;
   background: #f4f4f4;
-  color: #999;
+  color: #888;
   text-align: right;
   user-select: none;
   border-right: 1px solid #ccc;
+  min-width: 40px;
+  line-height: 1.4;
+  overflow: hidden;
+  font-size: 14px;
 }
 
 #code {
   flex: 1;
-  background-color: #feffff;
-  color: #030303;
-  font-family: monospace;
-  font-size: 14px;
-  padding: 10px;
+  padding: 8px;
   border: none;
   resize: none;
   outline: none;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  height: 100%;
+  overflow: auto;
 }
 .output {
   background-color: #000000;
