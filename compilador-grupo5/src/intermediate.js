@@ -14,6 +14,10 @@ function generate(ast) {
             const result = generateExpression(node.expression, quads);
             quads.push({ op: 'print', arg1: result, arg2: null, result: null });
         }
+        if (node.type === 'Assignment') {
+            const result = generateExpression(node.expression, quads);
+            quads.push({ op: '=', arg1: result, arg2: null, result: node.identifier });
+        }
     }
 
     return quads;

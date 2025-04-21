@@ -20,6 +20,13 @@ function analyze(ast) {
         if (node.type === 'Print') {
             checkExpression(node.expression, symbolTable);
         }
+        if (node.type === 'Assignment') {
+            if (!symbolTable.has(node.identifier)) {
+                throw new Error(`Error semántico: la variable '${node.identifier}' no ha sido declarada.`);
+            }
+
+            checkExpression(node.expression, symbolTable);
+        }
     }
 }
 

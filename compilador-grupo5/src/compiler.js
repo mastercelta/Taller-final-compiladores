@@ -15,6 +15,9 @@ function execute(ast, symbolTable = {}) {
             const result = evaluate(node.expression, symbolTable);
             console.log(result);
         }
+        if (node.type === 'Assignment') {
+            symbolTable[node.identifier] = evaluate(node.expression, symbolTable);
+        }
     }
 }
 
