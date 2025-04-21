@@ -9,9 +9,20 @@ function parser(tokens) {
 
     function consume(expectedType) {
         const token = tokens[current];
+        console.log(token);
+        console.log(current);
         if (!token || token.type !== expectedType) {
+            if (!token) {
+                const tokenLast = tokens[current - 1];
+                throw new Error(`Error sintáctico1: se esperaba '${expectedType}' en línea ${tokenLast.line}, columna ${tokenLast.col}`);
+            }
+            //Revisar si es el ultimo token de la linea y el expectedType es diferente
+            if (token.line !== tokens[current - 1].line && token.type !== expectedType) {
+                const tokenLast = tokens[current - 1];
+                throw new Error(`Error sintáctico2: se esperaba '${expectedType}' en línea ${tokenLast.line}, columna ${tokenLast.col}`);
+            }
             throw new Error(
-                `Error sintáctico: se esperaba '${expectedType}' en línea ${token?.line+1}, columna ${token?.col+1}`
+                `Error sintáctico: se esperaba '${expectedType}' en línea ${token.line}, columna ${token?.col}`
             );
         }
         current++;
@@ -29,6 +40,11 @@ function parser(tokens) {
             const expr = parseExpression();
             consume('RPAREN');
             return expr;
+        }
+        
+        if (token.line !== tokens[current - 1].line) {
+            const tokenLast = tokens[current - 1];
+            throw new Error(`Expresión no válida en línea ${tokenLast.line}, columna ${tokenLast.col}`);
         }
 
         throw new Error(`Expresión no válida en línea ${token.line}, columna ${token.col}`);
