@@ -204,13 +204,24 @@ async function generarImagenArbol() {
         const viz = new Viz();
         const svgString = await viz.renderString(dot);
 
-        astImageBase64 = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgString)));
+        // Convert SVG to Image
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.getElementById('ast-canvas');
+            canvas.width = img?.width || 800;
+            canvas.height = img?.height || 600;
 
-        console.log("Árbol generado ✔️");
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
 
+            // ✅ Guardar como base64 PNG
+            astImageBase64 = canvas.toDataURL('image/png');
+        };
+
+        img.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgString)));
     } catch (e) {
         console.error("Error generando el árbol:", e);
-        alert("Error al generar el árbol.");
+        alert("Hubo un error al generar la imagen del árbol.");
     }
 }
 
