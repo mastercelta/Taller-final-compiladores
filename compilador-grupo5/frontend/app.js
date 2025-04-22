@@ -1,4 +1,6 @@
 
+let astImageBase64 = null;
+
 document.getElementById('code').addEventListener('input', () => {
     const code = document.getElementById('code').value;
     fetch('http://localhost:3000/analizar-codigo', {
@@ -9,10 +11,14 @@ document.getElementById('code').addEventListener('input', () => {
         .then(res => res.json())
         .then(data => {
             const output = document.getElementById('statusbar');
+            const btnPDF = document.getElementById('btn-descargar-pdf');
+
             if (data.success) {
                 output.textContent = '';
+                btnPDF.disabled = false;
             } else {
                 output.textContent = `❌ ${data.message}`;
+                btnPDF.disabled = true;
             }
         })
         .catch(err => {
@@ -21,10 +27,12 @@ document.getElementById('code').addEventListener('input', () => {
 });
 
 function descargarPDF(tokens, ast, intermediate) {
+    const code = document.getElementById('code').value;
     fetch('http://localhost:3000/generar-pdf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tokens, ast, intermediate })
+        body: JSON.stringify({ code, astImageBase64 })
+
     })
         .then(response => response.blob())
         .then(blob => {
@@ -41,6 +49,11 @@ function descargarPDF(tokens, ast, intermediate) {
 function ejecutarCodigo() {
     const code = document.getElementById('code').value;
 
+    if (!code) {
+        alert("Por favor, ingresa código para ejecutar.");
+        return;
+    }
+
     fetch('http://localhost:3000/ejecutar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -49,10 +62,15 @@ function ejecutarCodigo() {
         .then(res => res.json())
         .then(data => {
             const output = document.getElementById('output');
+            const btnArbol = document.getElementById('mostrar-arbol');
+
             if (data.success) {
                 output.innerHTML = data.output.replace(/\\n/g, '<br>');
+                generarImagenArbol();
+                btnArbol.classList.remove('hidden');
             } else {
                 output.textContent = '❌ ' + data.error;
+                btnArbol.classList.add('hidden');
             }
         })
         .catch(err => {
@@ -96,121 +114,119 @@ textarea.addEventListener('scroll', () => {
 
 // Inicializar
 updateLineNumbers();
-// === Tu parser ===
+
 // === Parser ===
 function parsearCodigo(codigo) {
     const lineas = codigo
-      .split("\n")
-      .map(l => l.trim())
-      .filter(l => l !== "");
-  
+        .split("\n")
+        .map(l => l.trim())
+        .filter(l => l !== "");
+
     const programa = { nombre: "Program", hijos: [] };
-  
+
     for (let linea of lineas) {
-      if (linea.startsWith("def ") && linea.endsWith(";")) {
-        const contenido = linea.slice(4, -1).trim();
-        const partes = contenido.split(" igual ");
-        if (partes.length !== 2) {
-          programa.hijos.push({
-            nombre: "Error",
-            hijos: [{ nombre: `Sintaxis inválida en def: ${linea}` }]
-          });
-          continue;
-        }
-        programa.hijos.push({
-          nombre: "S",
-          hijos: [
-            { nombre: `id (${partes[0].trim()})` },
-            {
-              nombre: "E",
-              hijos: [
-                { nombre: "T", hijos: procesarExpresion(partes[1].trim()) }
-              ]
+        if (linea.startsWith("def ") && linea.endsWith(";")) {
+            const contenido = linea.slice(4, -1).trim();
+            const partes = contenido.split(" igual ");
+            if (partes.length !== 2) {
+                programa.hijos.push({
+                    nombre: "Error",
+                    hijos: [{ nombre: `Sintaxis inválida en def: ${linea}` }]
+                });
+                continue;
             }
-          ]
-        });
-      } else if (linea.startsWith("mostrar ") && linea.endsWith(";")) {
-        const expr = linea.slice(8, -1).trim();
-        programa.hijos.push({
-          nombre: "Mostrar",
-          hijos: [
-            { nombre: "E", hijos: [{ nombre: "T", hijos: procesarExpresion(expr) }] }
-          ]
-        });
-      } else {
-        programa.hijos.push({
-          nombre: "Error",
-          hijos: [{ nombre: `Sintaxis inválida: ${linea}` }]
-        });
-      }
+            programa.hijos.push({
+                nombre: "S",
+                hijos: [
+                    { nombre: `id (${partes[0].trim()})` },
+                    {
+                        nombre: "E",
+                        hijos: [
+                            { nombre: "T", hijos: procesarExpresion(partes[1].trim()) }
+                        ]
+                    }
+                ]
+            });
+        } else if (linea.startsWith("mostrar ") && linea.endsWith(";")) {
+            const expr = linea.slice(8, -1).trim();
+            programa.hijos.push({
+                nombre: "Mostrar",
+                hijos: [
+                    { nombre: "E", hijos: [{ nombre: "T", hijos: procesarExpresion(expr) }] }
+                ]
+            });
+        } else {
+            programa.hijos.push({
+                nombre: "Error",
+                hijos: [{ nombre: `Sintaxis inválida: ${linea}` }]
+            });
+        }
     }
-  
+
     return programa;
-  }
-  
-  function procesarExpresion(expr) {
+}
+
+function procesarExpresion(expr) {
     const operadores = ["+", "-", "*", "/"];
     return expr
-      .split(/\s+/)
-      .map(tok =>
-        operadores.includes(tok)
-          ? { nombre: tok }
-          : { nombre: `id (${tok})` }
-      );
-  }
-  
-  // === De AST a DOT ===
-  function astToDot(ast) {
+        .split(/\s+/)
+        .map(tok =>
+            operadores.includes(tok)
+                ? { nombre: tok }
+                : { nombre: `id (${tok})` }
+        );
+}
+
+// === De AST a DOT ===
+function astToDot(ast) {
     let dot = 'digraph G {\n  node [shape=box,fontname="Arial"];\n';
     let id = 0;
     function walk(node, parentId = null) {
-      const myId = id++;
-      dot += `  node${myId} [label="${node.nombre.replace(/"/g, '\\"')}"];\n`;
-      if (parentId !== null) {
-        dot += `  node${parentId} -> node${myId};\n`;
-      }
-      (node.hijos || []).forEach(child => walk(child, myId));
+        const myId = id++;
+        dot += `  node${myId} [label="${node.nombre.replace(/"/g, '\\"')}"];\n`;
+        if (parentId !== null) {
+            dot += `  node${parentId} -> node${myId};\n`;
+        }
+        (node.hijos || []).forEach(child => walk(child, myId));
     }
     walk(ast);
     dot += "}";
     return dot;
-  }
-  
-  // === Generar y descargar SVG ===
-  async function generarImagenArbol() {
+}
+
+// === Generar y descargar SVG ===
+async function generarImagenArbol() {
     try {
-      const codigo = document.getElementById("code").value;
-      const ast    = parsearCodigo(codigo);
-      const dot    = astToDot(ast);
-  
-      if (typeof Viz === "undefined") {
-        throw new Error("Viz no se cargó. Revisa el orden de los <script>.");
-      }
-  
-      const viz = new Viz();
-      // Usamos renderString para obtener SVG como texto
-      const svgString = await viz.renderString(dot);
-  
-      const uri = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgString);
-      const a   = document.createElement("a");
-      a.href    = uri;
-      a.download= "arbol_sintactico.svg";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      console.log("Descarga iniciada ✔️");
-  
+        const codigo = document.getElementById("code").value;
+        const ast = parsearCodigo(codigo);
+        const dot = astToDot(ast);
+
+        const viz = new Viz();
+        const svgString = await viz.renderString(dot);
+
+        astImageBase64 = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgString)));
+
+        console.log("Árbol generado ✔️");
+
     } catch (e) {
-      console.error("Error generando la imagen del árbol:", e);
-      alert("Hubo un error al generar la imagen. Revisa la consola.");
+        console.error("Error generando el árbol:", e);
+        alert("Error al generar el árbol.");
     }
-  }
-  
-  // === Otros métodos que ya tenías ===
-  // ejecutarCodigo(), limpiarCodigo(), mostrarInstrucciones(), etc.
-  
-  // === Asociar el botón ===
-  document.addEventListener("DOMContentLoaded", () => {
+}
+
+function mostrarModalArbol() {
+    const modal = document.getElementById('modal-arbol');
+    const img = document.getElementById('imagen-arbol');
+    img.src = astImageBase64;
+    modal.classList.remove('hidden');
+}
+
+function cerrarModalArbol() {
+    document.getElementById('modal-arbol').classList.add('hidden');
+}
+
+// === Asociar el botón ===
+document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("download-arbol");
     if (btn) btn.addEventListener("click", generarImagenArbol);
-  });
+});
