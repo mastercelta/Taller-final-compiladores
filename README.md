@@ -45,24 +45,31 @@ mostrar: se usa para imprimir resultados de operaciones o variables.
 
     // Mostramos resultado
     mostrar resultado;
+
+```
+## 🚀 ## Instalación
+Accede a la consola y sigue las intrucciones
+
+1. Clonar el proyecto
+
+```bash
+git clone https://github.com/mastercelta/Taller-final-compiladores.git
 ```
 
-## 🚀 Instrucciones para usar este repositorio
+2. Instalar librerías y dependencias
 
-Sigue los pasos a continuación para comenzar correctamente tu proyecto:
+```bash
+cd Taller-final-compiladores
+npm install
+```
 
-### 1. Realiza un Fork del repositorio
+## Ejecución
 
-Haz clic en el botón **"Fork"** en la parte superior derecha de este repositorio. Esto creará una copia en tu cuenta de GitHub.
+1. Ejecutar el proyecto
 
-### 2. Clona tu Fork a tu máquina local
-Asegúrate de realizar commits de manera frecuente para registrar tu progreso.
-
-Sube tus cambios a GitHub
-
-### 3. Comparte tu repositorio con el docente
-Antes de la fecha de entrega, asegúrate de compartir el enlace de tu repositorio (fork) con el docente a través del medio indicado 
-
+```bash
+npm start
+```
 
 
 
