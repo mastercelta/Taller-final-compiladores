@@ -2,7 +2,7 @@
 
 # 📘 Manual de Uso – Compilador Grupo 5
 
-Este compilador fue desarrollado para interpretar instrucciones personalizadas, analizar su estructura y generar código intermedio en forma de cuádruplas.
+Este es un compilador creado por el Grupo 5 y nos enfocamos en la generación de código intermedio, que es una representación del código fuente más fácil de procesar por la maquina, sea lenguaje maquina o interpretado como es este caso.
 
 ---
 
